@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Your T-Shirt | PixelPsycho Threads</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4e4e4e;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .eco-badge {
+            background-color: #d1f5d3;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            color: #4e4e4e;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Return Your T-Shirt</h1>
+
+        <div class="eco-badge">
+            🌱 Thank you for supporting sustainability by returning your T-shirt for recycling or upcycling! 🌱
+        </div>
+
+        <form id="returnForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="address">Shipping Address:</label>
+            <textarea id="address" placeholder="Enter your full shipping address" required></textarea>
+
+            <label for="tshirtCondition">T-Shirt Condition:</label>
+            <select id="tshirtCondition" required>
+                <option value="">Select Condition</option>
+                <option value="New">New</option>
+                <option value="Lightly Worn">Lightly Worn</option>
+                <option value="Heavily Worn">Heavily Worn</option>
+                <option value="Damaged">Damaged</option>
+            </select>
+
+            <label for="reason">Reason for Return:</label>
+            <select id="reason" required>
+                <option value="">Select Reason</option>
+                <option value="Recycling">Recycling</option>
+                <option value="Upcycling">Upcycling</option>
+            </select>
+
+            <button type="submit">Submit Return</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('returnForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert("Thank you for your return submission! We'll be in touch with further details.");
+            // Here, you can add logic to handle form data and send it to a backend server if needed.
+        });
+    </script>
+
+</body>
+</html>

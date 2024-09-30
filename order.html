@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Order | PixelPsycho Threads</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .order-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4e4e4e;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .eco-badge {
+            background-color: #d1f5d3;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            color: #4e4e4e;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="order-container">
+        <h1>Place Your Order</h1>
+
+        <div class="eco-badge">
+            🌱 You're supporting eco-friendly production with every order! 🌱
+        </div>
+
+        <form id="orderForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="address">Shipping Address:</label>
+            <textarea id="address" placeholder="Enter your full shipping address" required></textarea>
+
+            <label for="tshirtSize">T-Shirt Size:</label>
+            <select id="tshirtSize" required>
+                <option value="">Select Size</option>
+                <option value="S">Small</option>
+                <option value="M">Medium</option>
+                <option value="L">Large</option>
+                <option value="XL">Extra Large</option>
+            </select>
+
+            <label for="color">T-Shirt Color:</label>
+            <select id="color" required>
+                <option value="">Select Color</option>
+                <option value="White">White</option>
+                <option value="Black">Black</option>
+                <option value="Olive">Olive Green</option>
+                <option value="Red">Red</option>
+            </select>
+
+            <label for="design">Design Choice:</label>
+            <input type="text" id="design" placeholder="Enter your design choice or ID" required>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert("Thank you for your order! You'll receive a confirmation email shortly.");
+            // You can add more functionality to process the order here.
+        });
+    </script>
+
+</body>
+</html>

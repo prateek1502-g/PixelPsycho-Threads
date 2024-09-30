@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your T-Shirt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #839bb4; /* Light background for contrast */
+        }
+
+        .customize-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        h1, h2 ,h3 {
+            color: #333;
+            text-align: center;
+        }
+
+        .design-options {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .design-option {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .design-option img {
+            width: 150px; /* Adjust as needed */
+            height: auto;
+            border-radius: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #28a745; /* Green background */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        .close-button {
+            background-color: #dc3545; /* Red background for close button */
+        }
+
+        .close-button:hover {
+            background-color: #c82333; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="customize-container">
+        <h1>Customize Your T-Shirt</h1>
+        <div class="design-selection">
+            <h2>Choose an Authenticated Design</h2>
+            <div class="design-options">
+                <div class="design-option">
+                    <img src="design1.png" alt="Design 1">
+                    <button>Select Design</button>
+                </div>
+                <div class="design-option">
+                    <img src="design2.png" alt="Design 2">
+                    <button>Select Design</button>
+                </div>
+                <div class="design-option">
+                    <img src="design3.png" alt="Design 3">
+                    <button>Select Design</button>
+                </div>
+                <!-- Add more designs as needed -->
+            </div>
+        </div>
+
+        <div class="custom-design">
+            <h2>Create Your Own Design</h2>
+            <h3>Bring Your Imagination and Unique Designs To live </h3>
+            <textarea placeholder="Describe your design..."></textarea>
+            <button>Create Custom Design</button>
+        </div>
+
+        <button class="close-button" onclick="closeCustomize()">Close</button>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>

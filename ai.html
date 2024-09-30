@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Design Suggestions | PixelPsycho Threads</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .chat-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-header {
+            text-align: center;
+            background-color: #4e4e4e;
+            color: white;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .chat-window {
+            height: 400px;
+            overflow-y: auto;
+            background-color: #fafafa;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            font-size: 16px;
+            max-width: 70%;
+        }
+
+        .message.bot {
+            background-color: #d1f5d3; /* Light Green for Bot */
+            align-self: flex-start;
+        }
+
+        .message.user {
+            background-color: #b3d0ff; /* Light Blue for User */
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-container input {
+            width: 85%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .input-container button {
+            background-color: #28a745; /* Green button */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .input-container button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>AI Design Suggestions</h1>
+            <p>Your AI stylist for sustainable and stylish designs!</p>
+        </div>
+
+        <div class="chat-window" id="chatWindow">
+            <div class="message bot">Hello! I'm your AI stylist. How can I assist you with sustainable and stylish designs today?</div>
+        </div>
+
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Ask for design suggestions...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const chatWindow = document.getElementById('chatWindow');
+            const userInput = document.getElementById('userInput');
+            const userMessage = userInput.value;
+
+            if (userMessage.trim() !== '') {
+                // Append user message
+                const userDiv = document.createElement('div');
+                userDiv.className = 'message user';
+                userDiv.textContent = userMessage;
+                chatWindow.appendChild(userDiv);
+
+                // Scroll to the bottom
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+
+                // Clear input field
+                userInput.value = '';
+
+                // Simulate AI response after a delay
+                setTimeout(function() {
+                    const botDiv = document.createElement('div');
+                    botDiv.className = 'message bot';
+                    botDiv.textContent = getAIResponse(userMessage);
+                    chatWindow.appendChild(botDiv);
+
+                    // Scroll to the bottom again
+                    chatWindow.scrollTop = chatWindow.scrollHeight;
+                }, 1000);
+            }
+        }
+
+        function getAIResponse(message) {
+            // Example AI responses based on keywords
+            if (message.toLowerCase().includes('sustainable')) {
+                return "How about using organic cotton for a soft, eco-friendly touch?";
+            } else if (message.toLowerCase().includes('style')) {
+                return "Minimalist designs are trending! Keep it simple with a bold logo.";
+            } else if (message.toLowerCase().includes('color')) {
+                return "Try earthy tones like olive green or soft pastel shades for a trendy look.";
+            } else {
+                return "I'm here to help with design suggestions! Ask about sustainability, style, or color.";
+            }
+        }
+    </script>
+</body>
+</html>

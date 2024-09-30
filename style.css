@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    background-color: #243021bf;
+    color: #fff;
+    padding: 20px;
+}
+
+.quote-section {
+    background-image: url('homebg.png'); /* Add your background image path */
+    height: 50vh; /* Adjust the height as needed */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    position: relative; /* Position relative for the text overlay */
+}
+
+.quote-text {
+    color: #ffffffe5; /* Text color */
+    text-align: center;
+    padding: 20px;
+    background-color: transparent; /* Remove semi-transparent background */
+    position: absolute; /* Position absolutely within the relative parent */
+    z-index: 1; /* Ensure the text is above the background */
+    border: 2px solid #fff; /* Add a solid white border */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+.quote-text h2 {
+    margin: 0; /* Remove default margin */
+    font-size: 24px; /* Adjust font size as needed */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+}
+
+.user-journey {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.step {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    border: 2px solid #4e4e4e; /* Box border */
+}
+
+.step img {
+    width: 100%; /* Set to take the full width of the step box */
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Cover the box without distortion */
+    border-radius: 8px; /* Slightly rounded corners */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #243021bf;
+    color: #fff;
+    position: relative;
+}
+
+button {
+    background-color: #28a745; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try-On T-Shirt | PixelPsycho Threads</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b9c9ac;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tryon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #fbfff9;
+        }
+
+        h1 {
+            color: #4e4e4e;
+        }
+
+        #videoElement {
+            width: 400px;
+            height: 300px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tshirt-overlay {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            opacity: 0.8;
+        }
+
+        .instructions {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tryon-container">
+        <h1>Virtual T-Shirt Try-On</h1>
+        <video id="videoElement" autoplay></video>
+        <img id="tshirtOverlay" class="tshirt-overlay" src="tshirt.png" alt="T-shirt Design">
+        <div class="instructions">Align your body with the camera to visualize your custom T-shirt in real-time!</div>
+        <button onclick="changeTshirt()">Change T-Shirt Design</button>
+    </div>
+
+    <script>
+        // Access the camera
+        const video = document.getElementById('videoElement');
+
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function(stream) {
+                    video.srcObject = stream;
+                })
+                .catch(function(err0r) {
+                    console.log("Something went wrong!");
+                });
+        }
+
+        // Function to change the T-shirt design
+        function changeTshirt() {
+            const tshirtOverlay = document.getElementById('tshirtOverlay');
+            const designs = ['tshirt1.png', 'tshirt2.png', 'tshirt3.png']; // Example designs
+            const randomDesign = designs[Math.floor(Math.random() * designs.length)];
+            tshirtOverlay.src = randomDesign;
+        }
+    </script>
+</body>
+</html>
